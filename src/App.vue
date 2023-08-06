@@ -5,8 +5,23 @@
       <router-link to="/about">About</router-link>
     </nav>
     <router-view/>
+    <Avatar url="https://avatars.githubusercontent.com/u/93373675?s=48&v=4" 
+    :width="100" 
+    :height="100"
+    ></Avatar>
   </div>
 </template>
+
+<script>
+import Avatar from './components/Avatar.vue'
+
+export default {
+  name:'App', // 如果该组件是不需要注册就能使用，或者在注册的时候没有指定名称，则组件使用该名称
+  components: {
+    Avatar,
+  }
+}
+</script>
 
 <style lang="less">
 #app {
