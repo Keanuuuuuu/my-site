@@ -11,19 +11,36 @@
     ></Avatar>
 
     <Icon type="home"></Icon>
+
+    <Pager :total="100" :limit="5" :visibleNumber="30" :current="current"
+      @pageChange="handlePageChange"
+    ></Pager>
   </div>
 </template>
 
 <script>
 import Avatar from './components/Avatar.vue'
-import Icon from "./components/Icon.vue";
+import Icon from "./components/Icon.vue"
+import Pager from './components/Pager.vue'
 
 export default {
   name:'App', // 如果该组件是不需要注册就能使用，或者在注册的时候没有指定名称，则组件使用该名称
   components: {
     Avatar,
     Icon,
-  }
+    Pager
+  },
+  data() {
+    return {
+      current: 1
+    }
+  },
+  methods: {
+    handlePageChange(newPage) {
+      this.current = newPage;
+      console.log("加载当前页数据",newPage);
+    },
+  },
 }
 </script>
 
