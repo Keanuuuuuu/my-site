@@ -14,7 +14,7 @@ export default {
   props: {
     url: {
       type: String, // url属性必须是一个字符串
-      require: true
+      require: true // 属性必传
     },
     width: {
       type: Number

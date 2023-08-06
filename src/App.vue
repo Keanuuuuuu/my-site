@@ -9,16 +9,20 @@
     :width="100" 
     :height="100"
     ></Avatar>
+
+    <Icon type="home"></Icon>
   </div>
 </template>
 
 <script>
 import Avatar from './components/Avatar.vue'
+import Icon from "./components/Icon.vue";
 
 export default {
   name:'App', // 如果该组件是不需要注册就能使用，或者在注册的时候没有指定名称，则组件使用该名称
   components: {
     Avatar,
+    Icon,
   }
 }
 </script>
