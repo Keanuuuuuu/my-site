@@ -1,6 +1,6 @@
 <template>
   <div class="site-aside-container">
-    <Avatar url="" />
+    <Avatar url="https://avatars.githubusercontent.com/u/93373675?v=4" :width="100" :height="100"/>
     <h1 class="title">Keanu</h1>
     <Menu></Menu>
     <Contact />
@@ -32,7 +32,10 @@ export default {
   padding: 20px 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 .avatar-container {
   margin: 0 auto;

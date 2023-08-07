@@ -1,30 +1,17 @@
 <template>
-  <div id="app">
-    <Avatar url="https://avatars.githubusercontent.com/u/93373675?s=48&v=4" 
-    :width="100" 
-    :height="100"
-    ></Avatar>
-
-    <Icon type="home"></Icon>
-
-    <Pager :total="100" :limit="5" :visibleNumber="30" :current="current"
-      @pageChange="handlePageChange"
-    ></Pager>
-
-    <Empty />
-
-    <div class="imageLoader">
-      <ImageLoader
-      src="https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?fit=crop&crop=entropy&w=3456&h=2304"
-      placeholder="https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?w=100"
-      @load="handleLoaded"
-    />
-    </div>
-
-    <div class="sidebar">
-      <SideBar />
-    </div>
-
+  <div id="app" class="app-container">
+    <Layout>
+      <template #left>
+        <div class="aside">
+          <SideBar />
+        </div>
+    </template>
+    <template #default>
+        <div class="main">
+          
+        </div>
+    </template>
+    </Layout>
   </div>
 </template>
 
@@ -33,8 +20,9 @@ import Avatar from './components/Avatar'
 import Icon from "./components/Icon"
 import Pager from './components/Pager'
 import Empty from './components/Empty'
-import ImageLoader from "./components/ImageLoader";
+import ImageLoader from "./components/ImageLoader"
 import SideBar from './components/SideBar'
+import Layout from './components/Layout'
 export default {
   name:'App', // 如果该组件是不需要注册就能使用，或者在注册的时候没有指定名称，则组件使用该名称
   components: {
@@ -43,7 +31,8 @@ export default {
     Pager,
     Empty,
     ImageLoader,
-    SideBar
+    SideBar,
+    Layout
   },
   data() {
     return {
@@ -62,26 +51,10 @@ export default {
 }
 </script>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+<style lang="less" scoped>
+@import "~@/style/mixin.less";
+.app-container{
+  .self-fill(fixed);
 }
 
 .imageLoader{
