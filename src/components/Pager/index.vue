@@ -81,7 +81,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import '../style/var.less';
+@import '../../style/var.less';
 .pager-container {
 	display: flex;
 	justify-content: center;

@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
     <Avatar url="https://avatars.githubusercontent.com/u/93373675?s=48&v=4" 
     :width="100" 
     :height="100"
@@ -15,20 +10,40 @@
     <Pager :total="100" :limit="5" :visibleNumber="30" :current="current"
       @pageChange="handlePageChange"
     ></Pager>
+
+    <Empty />
+
+    <div class="imageLoader">
+      <ImageLoader
+      src="https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?fit=crop&crop=entropy&w=3456&h=2304"
+      placeholder="https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?w=100"
+      @load="handleLoaded"
+    />
+    </div>
+
+    <div class="sidebar">
+      <SideBar />
+    </div>
+
   </div>
 </template>
 
 <script>
-import Avatar from './components/Avatar.vue'
-import Icon from "./components/Icon.vue"
-import Pager from './components/Pager.vue'
-
+import Avatar from './components/Avatar'
+import Icon from "./components/Icon"
+import Pager from './components/Pager'
+import Empty from './components/Empty'
+import ImageLoader from "./components/ImageLoader";
+import SideBar from './components/SideBar'
 export default {
   name:'App', // 如果该组件是不需要注册就能使用，或者在注册的时候没有指定名称，则组件使用该名称
   components: {
     Avatar,
     Icon,
-    Pager
+    Pager,
+    Empty,
+    ImageLoader,
+    SideBar
   },
   data() {
     return {
@@ -40,6 +55,9 @@ export default {
       this.current = newPage;
       console.log("加载当前页数据",newPage);
     },
+    handleLoaded(){
+      console.log("加载图片");
+    }
   },
 }
 </script>
@@ -64,5 +82,19 @@ nav {
       color: #42b983;
     }
   }
+}
+
+.imageLoader{
+  width: 400px;
+  height: 200px;
+  margin: 0 20px;
+}
+
+.sidebar {
+  width: 300px;
+  height: 600px;
+  border: 2px solid;
+  margin: 0 auto;
+  overflow: auto;
 }
 </style>
