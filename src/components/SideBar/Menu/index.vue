@@ -1,9 +1,10 @@
 <template>
     <nav class="menu-container">
-      <a
+      <router-link
         v-for="item in items"
+        :exact="item.exact"
         :key="item.link"
-        :href="item.link"
+        :to="item.link"
         :class="{
           selected: isSelected(item),
         }"
@@ -12,7 +13,7 @@
           <Icon :type="item.icon" />
         </div>
         <span>{{ item.title }}</span>
-      </a>
+    </router-link>
     </nav>
   </template>
   
@@ -29,32 +30,43 @@
             link: "/",
             title: "首页",
             icon: "home",
+            exact: true
           },
           {
             link: "/blog",
             title: "文章",
             icon: "blog",
-            startWith: true, // 只要当前路径以link开头，当前菜单就是选中的
+            // startWith: true, 
+            // 只要当前路径以link开头，当前菜单就是选中的，保证了/blog/artical1、/blog/artical2都属于文章这一类
+
+            exact: false
+            // 这里配合着路由，为假表示不需要精确匹配
           },
           {
             link: "/about",
             title: "关于我",
             icon: "about",
+            exact: true
           },
           {
             link: "/project",
             title: "项目&效果",
             icon: "code",
+            exact: true
           },
           {
             link: "/message",
             title: "留言板",
             icon: "chat",
+            exact: true
           },
         ],
       };
     },
     methods: {
+
+    // 这个方法因为路由的exact也用不到了
+
       isSelected(item) {
         // 这个函数的主要用途就是体现，我列表菜单当前选择的是哪一个
         // 可以根据路径来判断，比如：loaclhost/about就是关于我
@@ -77,7 +89,7 @@
     color: @gray;
     margin: 24px 0;
     a {
-      &.selected {
+      &.router-link-active {
         background: darken(@words, 3%);
       }
       padding: 0 50px;
