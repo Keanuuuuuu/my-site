@@ -42,7 +42,7 @@ export default {
 }
 .aside {
   width: 250px;
-  height: 100vh;
+  height: 100%;
   border: 2px solid;
   margin: 0 auto;
   overflow: auto;

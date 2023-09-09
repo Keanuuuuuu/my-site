@@ -7,8 +7,13 @@ import router from './router'
 import store from './store'
 import "./style/global.less"
 import showMessage from "./utils/showMessage";
+import "./eventBus"
 Vue.prototype.$showMessage = showMessage;
 Vue.config.productionTip = false
+
+// 注册全局指令
+import vLoading from "./directives/loading";
+Vue.directive("loading", vLoading);
 
 new Vue({
   router,
