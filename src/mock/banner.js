@@ -20,7 +20,7 @@ Mock.mock("/api/banner", "get", {
     },
     {
       id: "3",
-      midImg: "http://mdrs.yuanjin.tech/img/20201031204401.jpg",
+      midImg: "",
       bigImg: "http://mdrs.yuanjin.tech/img/20201031204403.jpg",
       title: "",
       description: "",
