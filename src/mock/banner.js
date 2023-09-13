@@ -13,15 +13,15 @@ Mock.mock("/api/banner", "get", {
     },
     {
       id: "2",
-      midImg: "http://mdrs.yuanjin.tech/img/20201031205550.jpg",
-      bigImg: "http://mdrs.yuanjin.tech/img/20201031205551.jpg",
+      midImg: "http://mdrs.yuanjin.tech/img/20201031141507.jpg",
+      bigImg: "http://mdrs.yuanjin.tech/img/20201031141507.jpg",
       title: "",
       description: "",
     },
     {
       id: "3",
       midImg: "",
-      bigImg: "http://mdrs.yuanjin.tech/img/20201031204403.jpg",
+      bigImg: "http://mdrs.yuanjin.tech/img/20201031141507.jpg",
       title: "",
       description: "",
     },
