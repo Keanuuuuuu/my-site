@@ -5,15 +5,15 @@
           <div class="icon">
             <Icon type="github" />
           </div>
-          <span>DuYi-Edu</span>
+          <span>Keanu</span>
         </a>
       </li>
       <li>
-        <a href="mailto:23423424234@qq.com">
+        <a href="mailto:shiboliu647@gmail.com">
           <div class="icon">
             <Icon type="mail" />
           </div>
-          <span>23423424234@qq.com</span>
+          <span>shiboliu647@gmail.com</span>
         </a>
       </li>
       <li>
@@ -23,7 +23,7 @@
           <div class="icon">
             <Icon type="qq" />
           </div>
-          <span>3263023350</span>
+          <span>2737000320</span>
         </a>
         <div class="pop">
           <img
@@ -37,7 +37,7 @@
           <div class="icon weixin">
             <Icon type="weixin" />
           </div>
-          <span>dsfggasas</span>
+          <span>19555821918</span>
         </a>
         <div class="pop">
           <img

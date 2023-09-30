@@ -10,7 +10,7 @@
             }
           }">
             <img
-              :src="item.thumb"
+              v-lazy="item.thumb"
               :alt="item.title"
               :title="item.title"
             />
@@ -59,10 +59,14 @@ import Pager from "@/components/Pager"
 import fetchData from '@/mixins/fetchData.js'
 import { getBlogs } from '@/api/blog.js'
 import { formDate } from '@/utils'
+import eventBus from "@/eventBus"
 export default {
   mixins:[fetchData({})],
   components: {
     Pager
+  },
+  mounted(){
+    this.$refs.container.addEventListener("scroll", this.handleMainScroll);
   },
   methods: {
     formDate,
@@ -97,6 +101,9 @@ export default {
           }
         })
       }
+    },
+    handleMainScroll(){
+      eventBus.$emit("mainScroll", this.$refs.container)
     }
   },
   computed:{

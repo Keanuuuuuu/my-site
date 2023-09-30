@@ -61,6 +61,8 @@ import Vue from 'vue'
 // export default new Vue({})
 Vue.prototype.$bus = new Vue({})
 
+export default new Vue({})
+
 /* 
   因为一个空的Vue实例身上就有写好了的$emit、$on、$off实例成员
   我直接把这个Vue实例导出，在外面用的时候就像是导出上面那个手写的事件总线对象一样

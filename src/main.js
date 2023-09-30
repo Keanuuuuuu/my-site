@@ -14,6 +14,8 @@ Vue.config.productionTip = false
 // 注册全局指令
 import vLoading from "./directives/loading";
 Vue.directive("loading", vLoading);
+import vLazy from "./directives/lazy";
+Vue.directive("lazy", vLazy);
 
 new Vue({
   router,
