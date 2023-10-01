@@ -1,9 +1,11 @@
 <template>
   <div class="site-aside-container">
-    <Avatar url="https://avatars.githubusercontent.com/u/93373675?v=4" :width="100" :height="100"/>
-    <h1 class="title">Keanu</h1>
+    <template v-if="data">
+      <Avatar :url="data.avatar" :width="100" :height="100"/>
+      <h1 class="title">{{data.siteTitle}}</h1>
+    </template>
     <Menu></Menu>
-    <Contact />
+    <Contact v-if="data"/>
     <p class="footer">
       皖ICP备17001719号
     </p>
@@ -11,6 +13,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import Avatar from "@/components/Avatar";
 import Menu from "./Menu";
 import Contact from "./Contact";
@@ -20,6 +23,9 @@ export default {
     Menu,
     Contact,
   },
+  computed:{
+    ...mapState("settings",["data"])
+  }
 };
 </script>
 

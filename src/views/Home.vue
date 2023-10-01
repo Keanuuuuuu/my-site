@@ -158,7 +158,7 @@ export default {
     },
     async fetchData() {
       const res = await getBanners();
-      console.log(res);
+      // console.log(res);
       return res
     },
     handleWheel(e) {

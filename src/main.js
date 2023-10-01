@@ -17,6 +17,9 @@ Vue.directive("loading", vLoading);
 import vLazy from "./directives/lazy";
 Vue.directive("lazy", vLazy);
 
+// 应用初始化时获取全局设置
+store.dispatch("settings/getData");
+
 new Vue({
   router,
   store,
