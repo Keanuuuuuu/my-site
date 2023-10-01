@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './routes'
-import { titleController } from "@/utils"
+import  titleController  from "@/utils/titleController"
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -12,6 +12,7 @@ const router = new VueRouter({
 
 router.afterEach((to, from) => {
   if (to.meta.title) {
+    console.log(titleController);
     titleController.setRouteTitle(to.meta.title);
   }
 });
