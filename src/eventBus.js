@@ -61,7 +61,7 @@ import Vue from 'vue'
 // export default new Vue({})
 Vue.prototype.$bus = new Vue({})
 
-export default new Vue({})
+export default Vue.prototype.$bus
 
 /* 
   因为一个空的Vue实例身上就有写好了的$emit、$on、$off实例成员

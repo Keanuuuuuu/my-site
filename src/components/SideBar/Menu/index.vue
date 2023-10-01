@@ -54,12 +54,12 @@
             icon: "code",
             exact: true
           },
-          {
-            link: "/message",
-            title: "留言板",
-            icon: "chat",
-            exact: true
-          },
+          // {
+          //   link: "/message",
+          //   title: "留言板",
+          //   icon: "chat",
+          //   exact: true
+          // },
         ],
       };
     },
