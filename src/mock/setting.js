@@ -4,8 +4,8 @@ Mock.mock("/api/setting", "get", {
   msg: "",
   data: {
     avatar: "https://avatars.githubusercontent.com/u/93373675?v=4",
-    siteTitle: "Keanu'blog",
-    github: "https://github.com/DuYi-Edu",
+    siteTitle: "Keanu's blog",
+    github: "https://github.com/Keanuuuuuu",
     qq: "2737000320",
     qqQrCode:
       "",
@@ -15,6 +15,6 @@ Mock.mock("/api/setting", "get", {
     mail: "shiboliu647@gmail.com",
     icp: "皖ICP备null号",
     githubName: "Keanuuuuuu",
-    favicon: "https://www.bilibili.com/favicon.ico?v=1",
+    favicon: "",
   },
 });

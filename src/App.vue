@@ -1,10 +1,15 @@
 <template>
   <div id="app" class="app-container">
+    <div class="is" @click="isShowSideBar" ref="is">
+      <img src="../public/ishow.png" alt="">
+    </div>
     <Layout>
       <template #left>
-        <div class="aside">
-          <SideBar />
-        </div>
+        <!-- <transition name="changeShow" appear> -->
+          <div class="aside" v-show="is">
+            <SideBar />
+          </div>
+        <!-- </transition> -->
       </template> 
       <template #default>
           <div class="main">
@@ -12,7 +17,6 @@
           </div>
       </template>
     </Layout>
-  <!-- <Home/> -->
   </div>
 </template>
 
@@ -29,11 +33,14 @@ export default {
 },
   data() {
     return {
-
+      is: true
     }
   },
   methods: {
-
+    isShowSideBar(){
+      this.is = !this.is
+      this.$refs.is.style.left = this.$refs.is.style.left === 0 || this.$refs.is.style.left === "0px"? "250px":0;
+    }
   },
 }
 </script>
@@ -46,8 +53,37 @@ export default {
 .aside {
   width: 250px;
   height: 100%;
-  border: 2px solid;
+  // border: 2px solid;
+  box-sizing: border-box;
   margin: 0 auto;
   overflow: auto;
+}
+.is{
+  position: fixed;
+  left: 250px;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  z-index: 999;
+  cursor: pointer;
+  transition: all 0.5s;
+  img{
+    width: 100%;
+  }
+}
+
+.changeShow-enter-active {
+  animation: changeShow 0.3s;
+}
+.changeShow-leave-active {
+  animation: changeShow 0.3s reverse;
+}
+@keyframes changeShow {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0px);
+  }
 }
 </style>

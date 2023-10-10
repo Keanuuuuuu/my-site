@@ -67,15 +67,22 @@ export default {
   position: relative;
   overflow-y: auto;
   scroll-behavior: smooth;
+  background-image: url("../../public/pexels-run-ffwpu-18457214 (1) (3).jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .project-item {
-  transition: 0.5s;
   padding: 20px;
   display: flex;
-  margin-bottom: 20px;
+  margin: 10px;
+  background-color:rgba(242, 240, 240, 0.863);
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
   &:hover {
     box-shadow: -1px 1px 5px #000;
-    transform: scale(1.01) translate(3px, -3px);
+    transform: scale(1.05);
     color: inherit;
   }
   .thumb {

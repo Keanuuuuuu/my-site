@@ -42,6 +42,7 @@ export default {
       return await getBlogCategories();
     },
     handleSelect(item) {
+      console.log(item);
       const query = {
         page: 1,
         // 改变分类后，页码要回到第一页
@@ -75,6 +76,7 @@ export default {
   position: relative;
   height: 100vh;
   overflow-y: scroll;
+  background-color:rgba(242, 240, 240, 0.547);
   h2 {
     font-weight: bold;
     letter-spacing: 2px;

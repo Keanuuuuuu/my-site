@@ -1,7 +1,7 @@
 <template>
   <div class="blog-list-container" ref="container" v-loading="isLoading">
     <ul>
-      <li v-for="item in data.rows" :key="item.id">
+      <li v-for="item in data.rows" :key="item.id" class="bac_li">
         <div class="thumb" v-if="item.thumb">
           <router-link :to="{
             name: 'Detail',
@@ -147,6 +147,20 @@ export default {
     list-style: none;
     margin: 0;
     padding: 0;
+    li {
+      background-color:rgba(242, 240, 240, 0.863);
+      margin: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
+    }
+    li:hover{
+      transform: scale(1.05);
+      box-shadow: -1px 1px 5px #000;
+      color: inherit;
+    }
   }
 }
 li {

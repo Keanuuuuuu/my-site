@@ -1,11 +1,11 @@
 <template>
     <ul class="contact-container">
       <li>
-        <a href="">
+        <a :href="data.github">
           <div class="icon">
             <Icon type="github" />
           </div>
-          <span>{{ data.siteTitle }}</span>
+          <span>{{ data.githubName }}</span>
         </a>
       </li>
       <li>
