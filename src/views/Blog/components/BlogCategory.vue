@@ -16,18 +16,20 @@ export default {
   },
   computed: {
     categoryId() {
-      return +this.$route.params.categoryId || -1;
+      return this.$route.params.categoryId || -1;
     },
     limit() {
       return +this.$route.query.limit || 10;
     },
     list() {
       const totalArticleCount = this.data.reduce((a, b) => a + b.articleCount,0);
+      // 利用每个文章分类中含有的文章数量计算文章总数
 
       const result = [
         { name: "全部", id: -1, articleCount: totalArticleCount },
         // 在原始data数组的头部添加一个“全部”，把他的分类设为-1，获取全部文章
         ...this.data,
+        // 之后原始data再在这里展开
       ];
       // 在最后做一个映射，根据路由里的分类id，来确定数组里哪一个iselsect为true
       return result.map((it) => ({
@@ -35,6 +37,7 @@ export default {
         isSelect: it.id === this.categoryId,
         aside: `${it.articleCount}篇`,
       }));
+      // 由于categoryId是响应式的，所以list也是响应式的
     },
   },
   methods: {

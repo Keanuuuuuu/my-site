@@ -1,4 +1,4 @@
-// import "./mock";
+import "./mock";
 // 在mock的index中专门导入数据
 
 import Vue from 'vue'

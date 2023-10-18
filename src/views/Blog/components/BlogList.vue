@@ -110,23 +110,26 @@ export default {
     // 用来获取计算路由信息：
     routeInfo(){
       // params为路由里的一个属性，里面记载了这次路由中的一些参数信息
-      const categoryId = +this.$route.params.categoryId || -1 // 获取分类信息，如果没有，则置为-1表示获取所有的文章，不用分类了
+      const categoryId = this.$route.params.categoryId || -1 // 获取分类信息，如果没有，则置为-1表示获取所有的文章，不用分类了
+      // console.log(categoryId); // 成功打印
       const page = +this.$route.query.page || 1
       const limit = +this.$route.query.limit || 10
 
       return {
         categoryId,
         page,
-        limit
+        limit 
       }
     }
   },
   watch: {
-    async $route() {
+    // 相当于观察this.$route
+    async $route(newValue, oldValue) {
       this.isLoading = true;
       // 滚动高度为0
       this.$refs.container.scrollTop = 0;
       this.data = await this.fetchData();
+      // console.log(this.data);
       this.isLoading = false;
     },
   },

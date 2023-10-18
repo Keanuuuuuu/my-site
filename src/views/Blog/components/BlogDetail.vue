@@ -45,6 +45,9 @@ export default {
     margin-right: 15px;
   }
 }
+.blog-detail-container{
+  margin: auto 40px;
+}
 .markdown-body {
   margin: 2em 0;
 }

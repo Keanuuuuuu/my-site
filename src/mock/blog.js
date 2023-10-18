@@ -5,7 +5,7 @@ Mock.mock("/api/blogtype", "get", {
   msg: "",
   "data|10-20": [
     {
-      "id|+1": 1,
+      "id|1-10": "",
       name: "分类@id",
       "articleCount|0-300": 0,
       "order|+1": 1,

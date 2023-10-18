@@ -29,7 +29,9 @@ export default {
   },
   methods:{
     async fetchData (){
-      return await getBlog(this.$route.params.id)
+      const a = await getBlog(this.$route.params.id)
+      console.log(a);
+      return a
     },
     handler(){
       this.$bus.$emit("mainScroll", this.$refs.mainContainer)
